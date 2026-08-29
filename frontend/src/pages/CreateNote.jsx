@@ -10,11 +10,16 @@ const CreateNote = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const noteData = new FormData(e.target)
+    const formData = new FormData(e.target)
 
-    console.log(noteData)
+    const data = {
+      title: formData.get("title"),
+      description: formData.get("description")
+    }
 
-    axios.post("http://localhost:3000/create", noteData)
+    console.log(data)
+
+    axios.post("http://localhost:3000/create", data)
     .then((res) => {
       navigate("/feed")
     })
@@ -25,10 +30,10 @@ const CreateNote = () => {
     
     <form onSubmit={handleSubmit} className='h-[88vh] text-white flex flex-col gap-10 max-w-85'>
 
-      <input type="text" placeholder='Title' required 
+      <input type="text" name= "title" placeholder='Title' required 
       className='text-3xl font-bold tracking-wider border p-4 rounded-4xl' />
 
-      <textarea type="text" placeholder='Description' 
+      <textarea type="text" name="description" placeholder='Description' 
       className='text-lg border h-[70%] p-2 tracking-wide leading-8 rounded-xl' />
 
       <button type='submit' className='bg-slate-600 p-6 rounded-full tracking-widest font-bold text-2xl'>Add Note</button>
