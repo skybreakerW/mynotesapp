@@ -1,10 +1,11 @@
 import express from "express";
 import { Notes } from "./models/notes.model.js"
+import cors from "cors" 
 
 const app = express()
 
 app.use(express.json())
-
+app.use(cors())
 
 
 app.post("/create", async (req,res) => {
@@ -20,7 +21,7 @@ app.post("/create", async (req,res) => {
     })
 })
 
-app.get("/", async (req, res) => {
+app.get("/feed", async (req, res) => {
 
     const notes = await Notes.find()
     // res.send("Hello")
