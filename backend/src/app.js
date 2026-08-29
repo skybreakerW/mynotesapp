@@ -21,7 +21,7 @@ app.post("/create", async (req,res) => {
     })
 })
 
-app.get("/feed", async (req, res) => {
+app.get("/notes", async (req, res) => {
 
     const notes = await Notes.find()
     // res.send("Hello")
@@ -40,7 +40,7 @@ app.delete("/feed/:id", async(req, res) => {
     })
 
     res.status(200).json({
-        message: "Note deleted sss."
+        message: "Note deleted successfully."
     })
 })
 

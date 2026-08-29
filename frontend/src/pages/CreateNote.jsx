@@ -21,7 +21,7 @@ const CreateNote = () => {
 
     axios.post("http://localhost:3000/create", data)
     .then((res) => {
-      navigate("/feed")
+      navigate("/notes")
     })
   }
 
