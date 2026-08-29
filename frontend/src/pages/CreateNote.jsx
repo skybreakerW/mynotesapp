@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from '../components/Button'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import axios from "axios"
 
 const CreateNote = () => {
 
@@ -21,12 +21,17 @@ const CreateNote = () => {
   }
 
   return (
-    <section className='min-h-screen bg-[#22242a] border-amber-100 flex items-start p-8'>
+    <section className='min-h-screen bg-[#22242a] border-amber-100 flex justify-center items-start p-12'>
     
-    <form onSubmit={handleSubmit} className='text-white'>
+    <form onSubmit={handleSubmit} className='h-[88vh] text-white flex flex-col gap-10 max-w-85'>
 
-      <input type="text" placeholder='title' />
-      <button type='submit'>Submit</button>
+      <input type="text" placeholder='Title' required 
+      className='text-3xl font-bold tracking-wider border p-4 rounded-4xl' />
+
+      <textarea type="text" placeholder='Description' 
+      className='text-lg border h-[70%] p-2 tracking-wide leading-8 rounded-xl' />
+
+      <button type='submit' className='bg-slate-600 p-6 rounded-full tracking-widest font-bold text-2xl'>Add Note</button>
 
     </form>
         
