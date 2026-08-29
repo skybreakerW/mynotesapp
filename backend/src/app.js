@@ -31,6 +31,19 @@ app.get("/feed", async (req, res) => {
     })
 })
 
+app.delete("/feed/:id", async(req, res) => {
+
+    const id = req.params.id
+
+    await Notes.findOneAndDelete({
+        _id: id,
+    })
+
+    res.status(200).json({
+        message: "Note deleted sss."
+    })
+})
+
 
 
 
