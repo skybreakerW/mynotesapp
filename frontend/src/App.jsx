@@ -1,7 +1,9 @@
 import { Routes, Route } from "react-router-dom"
-import CreateNote from "../src/pages/CreateNote.jsx"
-import Feed from "./pages/feed.jsx"
 import axios from "axios"
+import Land from "../src/pages/Land.jsx"
+import CreateNote from "../src/pages/CreateNote.jsx"
+import Notes from "../src/pages/Notes.jsx"
+
 
 
 function App() {
@@ -9,8 +11,9 @@ function App() {
 
   return (
     <Routes>
+      <Route path = '/' element={<Land/>} />
       <Route path = '/create' element={<CreateNote/>} />
-      <Route path = '/feed' element={<Feed />} />
+      <Route path = '/notes' element={<Notes/>} />  
     </Routes>
   )
 }
