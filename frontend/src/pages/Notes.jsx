@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from "axios"
+import Addbtn from '../components/Addbtn.jsx';
 
 const Notes = () => {
     const [notes, setNotes] = useState([])
@@ -28,10 +29,10 @@ const Notes = () => {
         </div>
         ))
     ) : (
-        <h1>No notes Found</h1>
+        <Addbtn/>
     )
-}
-
+}   
+    <Addbtn/>
     </section>
 
     </>
