@@ -1,10 +1,9 @@
 import React from 'react'
+import axios from "axios"
+import { useNavigate } from 'react-router-dom'
 import Addbtn from '../components/Addbtn.jsx'
 import Savebtn from '../components/Savebtn.jsx'
-import { useNavigate } from 'react-router-dom'
-import axios from "axios"
-
-
+import Navi from "../components/Navi.jsx"
 
 const CreateNote = () => {
 
@@ -29,23 +28,24 @@ const CreateNote = () => {
   }
 
   return (
+    <>
+    <Navi/>
     <section className='min-h-screen bg-[#22242a] border-amber-100 flex justify-center items-start p-12'>
     
-    <form onSubmit={handleSubmit} className='h-[88vh] text-white flex flex-col gap-10 max-w-85'>
+      <form onSubmit={handleSubmit} className='h-[88vh] text-white flex flex-col gap-10 max-w-85'>
 
-      <input type="text" name= "title" placeholder='Title' required 
-      className='text-3xl font-bold tracking-wider p-4 rounded-2xl' />
+        <input type="text" name= "title" placeholder='Title' required 
+        className='text-3xl font-bold tracking-wider p-4 rounded-2xl' />
 
-      <textarea type="text" name="description" placeholder='Description' 
-      className='text-lg h-[70%] p-2 tracking-wide leading-8 rounded-xl' />
+        <textarea type="text" name="description" placeholder='Description' 
+        className='text-lg h-[70%] p-2 tracking-wide leading-8 rounded-xl' />
 
-      <Savebtn/>
+        <Savebtn/>
 
-    </form>
+      </form>
         
-
-    
     </section>
+    </>
   )
 }
 
