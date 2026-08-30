@@ -13,7 +13,6 @@ const Notes = () => {
         axios.get("http://localhost:3000/notes")
         .then((res) => {
             setNotes(res.data.notes)
-            console.log(res.data)
         })
     },[])
 
