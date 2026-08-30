@@ -19,9 +19,7 @@ const CreateNote = () => {
       description: formData.get("description")
     }
 
-    console.log(data)
-
-    axios.post("http://localhost:3000/create", data)
+    axios.post("http://192.168.29.186:3000/create", data)
     .then((res) => {
       navigate("/notes")
     })
