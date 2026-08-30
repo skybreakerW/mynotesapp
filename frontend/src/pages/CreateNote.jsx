@@ -19,9 +19,12 @@ const CreateNote = () => {
       description: formData.get("description")
     }
 
-    axios.post("http://192.168.29.186:3000/create", data)
+    axios.post(`${import.meta.env.VITE_API_URL}/create`, data)
     .then((res) => {
       navigate("/notes")
+    .catch((err) => {
+      console.error("Failed to create note: ",err)
+    })
     })
   }
 

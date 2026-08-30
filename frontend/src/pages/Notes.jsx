@@ -10,9 +10,12 @@ const Notes = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get("http://192.168.29.186:3000/notes")
+        axios.get(`${import.meta.env.VITE_API_URL}/notes`)
         .then((res) => {
             setNotes(res.data.notes)
+        })
+        .catch((err) => {
+            console.error("Failed to fetch notes: ",err)
         })
     },[])
 
@@ -31,7 +34,7 @@ const Notes = () => {
             </div>
             ))
         ) : (
-            <Addbtn/>
+            <h1 className='text-white content-center mt-40 '>No Notes to show</h1>
         )
     }   
         <Addbtn/>
