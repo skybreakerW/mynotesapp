@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import axios from "axios"
 import Addbtn from '../components/Addbtn.jsx';
 import Navi from "../components/Navi.jsx"
+import { SquareX } from 'lucide-react';
 
 const Notes = () => {
     const [notes, setNotes] = useState([])
@@ -19,6 +20,18 @@ const Notes = () => {
         })
     },[])
 
+
+    const deleteNote = async(id) => {
+        try {
+            const response = await axios.delete(`${import.meta.env.VITE_API_URL}/notes/${id}`)
+            
+            setNotes((prevNotes) => prevNotes.filter((note) => note._id !== id)
+    );
+        } catch (error) {
+            console.log("Failed to delete note: ",error)
+        }
+    }
+
   return (
     <div className='bg-[#22242a] mb-16'>
         
@@ -28,7 +41,12 @@ const Notes = () => {
 
         {notes.length > 0 ? (
             notes.map((note)=> (
-            <div key={note._id} className='h-auto w-96 bg-slate-500 text-white rounded-2xl p-4 first:mt-20'>
+            <div key={note._id} className='h-auto w-96 bg-slate-500 text-white rounded-2xl p-4 first:mt-20 relative'>
+
+                <button className='absolute right-5' onClick={()=>deleteNote(note._id)}>
+                    <SquareX size={30} color="#90a1b9" strokeWidth={1.5} />
+                </button>
+
                 <h1 className='text-2xl p-1 ml-2 font-black tracking-wider'>{note.title}</h1>
                 <h3 className='text-md p-1 ml-2 font-bold tracking-wide leading-7'>{note.description}</h3>
             </div>
