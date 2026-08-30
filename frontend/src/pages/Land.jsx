@@ -1,6 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Navi from '../components/Navi'
+import { SquarePen } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 
 const Land = () => {
 
@@ -22,8 +24,13 @@ const Land = () => {
         <h1 className='text-center text-white font-bold text-4xl'>Welcome!</h1>
         <div className='text-white p-4 flex flex-row justify-around items-center w-full'>
 
-          <button className='bg-slate-600 p-4 rounded-xl tracking-wider font-bold text-lg' onClick={create}>Create Note</button>
-          <button className='bg-slate-600 p-4 rounded-xl tracking-wider font-bold text-lg' onClick={read}>Read Notes</button>
+          <button className='bg-slate-600 px-4 py-2 rounded-xl tracking-wider font-bold text-lg flex flex-row items-center gap-2' onClick={create}>
+            <SquarePen size={25} color="#ffffff" strokeWidth={0.5} />Create Note
+          </button>
+
+          <button className='bg-slate-600 px-4 py-2 rounded-xl tracking-wider font-bold text-lg flex flex-row items-center gap-2' onClick={read}>
+            <BookOpen size={25} color="#ffffff" strokeWidth={0.5} />Read Notes
+          </button>
 
         </div>
 
