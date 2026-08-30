@@ -25,11 +25,11 @@ const Land = () => {
         <div className='text-white p-4 flex flex-row justify-around items-center w-full'>
 
           <button className='bg-slate-600 px-4 py-2 rounded-xl tracking-wider font-bold text-lg flex flex-row items-center gap-2' onClick={create}>
-            <SquarePen size={25} color="#ffffff" strokeWidth={0.5} />Create Note
+            <SquarePen size={25} color="#ffffff" strokeWidth={1.5} />Create Note
           </button>
 
           <button className='bg-slate-600 px-4 py-2 rounded-xl tracking-wider font-bold text-lg flex flex-row items-center gap-2' onClick={read}>
-            <BookOpen size={25} color="#ffffff" strokeWidth={0.5} />Read Notes
+            <BookOpen size={25} color="#ffffff" strokeWidth={1.5} />Read Notes
           </button>
 
         </div>
