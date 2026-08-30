@@ -1,7 +1,10 @@
 import React from 'react'
-import Button from '../components/Button'
+import Addbtn from '../components/Addbtn.jsx'
+import Savebtn from '../components/Savebtn.jsx'
 import { useNavigate } from 'react-router-dom'
 import axios from "axios"
+
+
 
 const CreateNote = () => {
 
@@ -36,7 +39,7 @@ const CreateNote = () => {
       <textarea type="text" name="description" placeholder='Description' 
       className='text-lg h-[70%] p-2 tracking-wide leading-8 rounded-xl' />
 
-      <button type='submit' className='bg-slate-600 p-6 rounded-4xl tracking-widest font-bold text-2xl cursor-pointer'>Save</button>
+      <Savebtn/>
 
     </form>
         
