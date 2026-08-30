@@ -9,7 +9,7 @@ const Navi = () => {
     const navigate = useNavigate()
 
   return (
-    <section className='bg-[#22242a] w-full h-[6vh] fixed bottom-0 flex justify-around items-center'>
+    <section className='bg-[#22242a] w-full h-[7vh] fixed bottom-0 flex justify-around items-center'>
 
         <div className='text-white flex flex-col items-center'>
             <button onClick={() => navigate("/")}><House color="#ffffff" /></button>
