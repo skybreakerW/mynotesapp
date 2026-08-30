@@ -35,10 +35,10 @@ const CreateNote = () => {
       <form onSubmit={handleSubmit} className='h-[88vh] text-white flex flex-col gap-10 max-w-85'>
 
         <input type="text" name= "title" placeholder='Title' required 
-        className='text-3xl font-bold tracking-wider p-4 rounded-2xl' />
+        className='text-3xl font-bold tracking-wider p-4 rounded-2xl outline-none' />
 
         <textarea type="text" name="description" placeholder='Description' 
-        className='text-lg h-[70%] p-2 tracking-wide leading-8 rounded-xl' />
+        className='text-lg h-[70%] p-2 tracking-wide leading-8 rounded-xl outline-none' />
 
         <Savebtn/>
 
